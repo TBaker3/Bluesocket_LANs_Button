@@ -5,6 +5,7 @@
 // @description  Opens sites corresponding BlueSocket controller.
 // @author       Zachary Kitcher
 // @match        https://vselect.com/*?goto=bblancircuits&locid=*
+// @updateURL    https://github.com/ZKitcher/Bluesocket_LANs_Button/raw/master/BlueSocket%20Button.user.js
 // ==/UserScript==
 
 
