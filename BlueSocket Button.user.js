@@ -1,9 +1,10 @@
 // ==UserScript==
 // @name         BlueSocket Button
 // @namespace    http://tampermonkey.net/
-// @version      0.2
+// @version      0.3
 // @description  Opens sites corresponding BlueSocket controller.
 // @author       Zachary Kitcher
+// @fixed.by     Thomas Baker
 // @match        https://vselect.com/*?goto=bblancircuits&locid=*
 // @updateURL    https://github.com/ZKitcher/Bluesocket_LANs_Button/raw/master/BlueSocket%20Button.user.js
 // ==/UserScript==
@@ -36,7 +37,15 @@
 
     btn.addEventListener ("click", function() {
         BSSelection = document.getElementsByClassName("vselect-dropdown")[0];
-        if (BSSelection.value > 0){
+        if (BSSelection.value == 2){
+            indexBSSelection = document.getElementsByClassName("vselect-dropdown")[0].selectedIndex;
+            optionBSSelection = document.getElementsByClassName("vselect-dropdown")[0].options;
+            BSString = optionBSSelection[indexBSSelection].text;
+            BSString = BSString.replace(/\D+/g, "");
+            window.open("https://162.220.73." + BSString + ":3000/");
+        }
+        else if
+            (BSSelection.value > 2){
             indexBSSelection = document.getElementsByClassName("vselect-dropdown")[0].selectedIndex;
             optionBSSelection = document.getElementsByClassName("vselect-dropdown")[0].options;
             BSString = optionBSSelection[indexBSSelection].text;
